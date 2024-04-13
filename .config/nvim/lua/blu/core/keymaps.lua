@@ -25,12 +25,10 @@ keymap.set('n', 'U', '<C-r>')
 -- don't add to clipboard by default, unless prefixed by a leader
 keymap.set({ 'n', 'x' }, 'x', '"_x')
 keymap.set({ 'n', 'x' }, 'd', '"_d')
-keymap.set({ 'n', 'x' }, 's', '"_s')
 keymap.set({ 'n', 'x' }, 'c', '"_c')
 keymap.set({ 'n', 'x' }, 'r', '"_r')
 keymap.set({ 'n', 'x' }, '<leader>x', 'x')
 keymap.set({ 'n', 'x' }, '<leader>d', 'd')
-keymap.set({ 'n', 'x' }, '<leader>s', 's')
 keymap.set({ 'n', 'x' }, '<leader>c', 'c')
 keymap.set({ 'n', 'x' }, '<leader>r', 'r')
 
