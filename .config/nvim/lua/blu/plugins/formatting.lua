@@ -19,7 +19,7 @@ return {
         python = { 'isort', 'black' },
         go = { 'goimports', 'gofmt' },
         rust = { 'rustfmt' },
-        ['_'] = { 'trim_whitespace' },
+        ['*'] = { 'trim_whitespace' },
       },
       format_on_save = {
         lsp_fallback = true,

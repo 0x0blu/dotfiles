@@ -10,6 +10,9 @@ opt.shiftwidth = 2
 opt.expandtab = true
 opt.autoindent = true
 
+-- disable word wrap
+opt.wrap = false
+
 -- smart case searching
 opt.ignorecase = true
 opt.smartcase = true
@@ -19,9 +22,6 @@ opt.termguicolors = true
 opt.background = 'light'
 opt.signcolumn = 'yes'
 opt.cursorline = true
-
--- use system clipboard
-opt.clipboard:append 'unnamedplus'
 
 -- split windows to the right and to the bottom
 opt.splitright = true

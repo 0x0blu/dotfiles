@@ -9,7 +9,7 @@ return {
     local nvimtree = require 'nvim-tree'
 
     nvimtree.setup {
-      view = { width = 35, relativenumber = true },
+      view = { width = 45, relativenumber = true },
       renderer = { indent_markers = { enable = true } },
       filters = { custom = { '.DS_Store' } },
       git = { ignore = false },
