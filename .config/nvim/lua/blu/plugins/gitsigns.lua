@@ -26,10 +26,11 @@ return {
         gs.reset_hunk { vim.fn.line '.', vim.fn.line 'v' }
       end, 'Reset change')
 
+      map('n', '<leader>cu', gs.undo_stage_hunk, 'Undo stage change')
+
       map('n', '<leader>cas', gs.stage_buffer, 'Stage all changes')
       map('n', '<leader>car', gs.reset_buffer, 'Reset all changes')
-
-      map('n', '<leader>cu', gs.undo_stage_hunk, 'Undo stage change')
+      map('n', '<leader>cau', gs.reset_buffer_index, 'Unstage all changes')
 
       map('n', '<leader>cp', gs.preview_hunk, 'Preview change')
 
