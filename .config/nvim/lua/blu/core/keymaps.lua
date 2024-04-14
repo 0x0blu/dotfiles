@@ -19,6 +19,9 @@ keymap.set('n', '<leader>tk', '<cmd>tabprevious<CR>', { desc = 'Go to previous t
 keymap.set('n', '<leader>tl', '<cmd>+tabmove<CR>', { desc = 'Move tab to the right' })
 keymap.set('n', '<leader>th', '<cmd>-tabmove<CR>', { desc = 'Move tab to the left' })
 
+keymap.set({ 'n', 'x' }, '<leader>y', '"+y', { desc = 'Yank to system clipboard' })
+keymap.set({ 'n', 'x' }, '<leader>p', '"+p', { desc = 'Paster from system clipboard' })
+
 -- use capital U for redo
 keymap.set('n', 'U', '<C-r>')
 

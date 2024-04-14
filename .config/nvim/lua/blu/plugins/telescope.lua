@@ -23,7 +23,6 @@ return {
 
     keymap.set('n', '<leader>fa', '<cmd>Telescope find_files<CR>', { desc = 'Find file' })
     keymap.set('n', '<leader>fr', '<cmd>Telescope oldfiles<CR>', { desc = 'Find recent file' })
-    keymap.set('n', '<leader>fg', '<cmd>Telescope git_files<CR>', { desc = 'Find git tracked file' })
 
     keymap.set('n', '<leader>/', '<cmd>Telescope live_grep<CR>', { desc = 'Find a string in files' })
     keymap.set('n', '<leader>fs', '<cmd>Telescope grep_string<CR>', { desc = 'Find string under cursor' })
