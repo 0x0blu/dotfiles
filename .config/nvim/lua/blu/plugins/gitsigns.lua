@@ -3,6 +3,8 @@ return {
   event = { 'BufReadPre', 'BufNewFile' },
   opts = {
     attach_to_untracked = true,
+    current_line_blame = true,
+    current_line_blame_opts = { delay = 0 },
     on_attach = function(bufnr)
       local gs = package.loaded.gitsigns
 
@@ -10,36 +12,34 @@ return {
         vim.keymap.set(mode, l, r, { buffer = bufnr, desc = desc })
       end
 
-      map('n', ']h', gs.next_hunk, 'Next Hunk')
-      map('n', '[h', gs.prev_hunk, 'Prev Hunk')
+      map('n', ']c', gs.next_hunk, 'Next change')
+      map('n', '[c', gs.prev_hunk, 'Previous change')
 
-      map('n', '<leader>hs', gs.stage_hunk, 'Stage hunk')
-      map('n', '<leader>hr', gs.reset_hunk, 'Reset hunk')
-      map('v', '<leader>hs', function()
+      map('n', '<leader>cs', gs.stage_hunk, 'Stage change')
+      map('n', '<leader>cr', gs.reset_hunk, 'Reset change')
+
+      map('v', '<leader>cs', function()
         gs.stage_hunk { vim.fn.line '.', vim.fn.line 'v' }
-      end, 'Stage hunk')
-      map('v', '<leader>hr', function()
+      end, 'Stage change')
+
+      map('v', '<leader>cr', function()
         gs.reset_hunk { vim.fn.line '.', vim.fn.line 'v' }
-      end, 'Reset hunk')
+      end, 'Reset change')
 
-      map('n', '<leader>hS', gs.stage_buffer, 'Stage buffer')
-      map('n', '<leader>hR', gs.reset_buffer, 'Reset buffer')
+      map('n', '<leader>cas', gs.stage_buffer, 'Stage all changes')
+      map('n', '<leader>car', gs.reset_buffer, 'Reset all changes')
 
-      map('n', '<leader>hu', gs.undo_stage_hunk, 'Undo stage hunk')
+      map('n', '<leader>cu', gs.undo_stage_hunk, 'Undo stage change')
 
-      map('n', '<leader>hp', gs.preview_hunk, 'Preview hunk')
+      map('n', '<leader>cp', gs.preview_hunk, 'Preview change')
 
-      map('n', '<leader>hb', function()
+      map('n', '<leader>cb', function()
         gs.blame_line { full = true }
       end, 'Blame line')
-      map('n', '<leader>hB', gs.toggle_current_line_blame, 'Toggle line blame')
 
-      map('n', '<leader>hd', gs.diffthis, 'Diff this')
-      map('n', '<leader>hD', function()
-        gs.diffthis '~'
-      end, 'Diff this ~')
+      map('n', '<leader>clb', gs.toggle_current_line_blame, 'Toggle line blame')
 
-      map({ 'o', 'x' }, 'ih', ':<C-U>Gitsigns select_hunk<CR>', 'Gitsigns select hunk')
+      map('n', '<leader>cd', gs.diffthis, 'Diff this')
     end,
   },
 }
